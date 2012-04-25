@@ -1,0 +1,8 @@
+# Practices of a Modern Tech Startup
+
+A survey of the strategies, technologies, and tricks used by the
+Developers at Braintree to build software that processes billions of
+dollars in payments. Topics covered will include: Test Driven
+Development, Pair Programming, Highly Available Infrastructure,
+Configuration Management, and Version Control. Bring your questions
+about day-to-day life as a professional software developer.

@@ -1,0 +1,11 @@
+collect_cpu_stats         # module root dir
+├── files                 # static files
+├── lib
+│   ├── facter            # custom facts
+│   └── puppet
+│       ├── parser  
+│       │   └── functions # custom parser functions
+│       └── type
+├── manifests
+│   └── init.pp           # entry point
+└── templates             # template files

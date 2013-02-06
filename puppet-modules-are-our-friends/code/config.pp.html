@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/dev/presentations/puppet-modules-are-your-friends/code/config.pp.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v6">
+<meta name="syntax" content="puppet">
+<meta name="settings" content="use_css">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #c6c6c6; background-color: #000000; }
+body { font-family: monospace; color: #c6c6c6; background-color: #000000; }
+.Type { color: #afaf5f; font-weight: bold; }
+.Constant { color: #ffafaf; }
+.Statement { color: #ffd787; font-weight: bold; }
+.Special { color: #ffd7af; }
+.Identifier { color: #87ff87; }
+.level16c { color: #ff6060; }
+-->
+</style>
+</head>
+<body>
+<pre>
+class collect_cpu_stats::config <span class="level16c">(</span>
+  <span class="Identifier">$hostname</span>,
+  <span class="Identifier">$interval</span>
+<span class="level16c">)</span> <span class="Special">{</span>
+  <span class="Statement">file</span> <span class="Special">{</span> <span class="Constant">&quot;/etc/init/collect-cpu-stats.conf&quot;</span>:
+    <span class="Identifier">content</span> =&gt; template<span class="level16c">(</span><span class="Constant">&quot;collect_cpu_stats/collect-cpu-stats.conf.erb&quot;</span><span class="level16c">)</span>,
+    <span class="Identifier">notify</span> =&gt; <span class="Type">Class</span><span class="Special">[</span><span class="Constant">'collect_cpu_stats::service'</span><span class="Special">]</span>
+  <span class="Special">}</span>
+<span class="Special">}</span>
+</pre>
+</body>
+</html>

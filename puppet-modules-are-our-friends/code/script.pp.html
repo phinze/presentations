@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/dev/presentations/puppet-modules-are-your-friends/code/script.pp.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v6">
+<meta name="syntax" content="puppet">
+<meta name="settings" content="use_css">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #c6c6c6; background-color: #000000; }
+body { font-family: monospace; color: #c6c6c6; background-color: #000000; }
+.Identifier { color: #87ff87; }
+.Constant { color: #ffafaf; }
+.Special { color: #ffd7af; }
+.Statement { color: #ffd787; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+class <span class="Statement">collect_cpu_stats</span>::<span class="Statement">script</span> <span class="Special">{</span>
+  <span class="Statement">file</span> <span class="Special">{</span> <span class="Constant">'/usr/local/bin/collect-cpu-stats'</span>:
+    <span class="Identifier">mode</span> =&gt; 755,
+    <span class="Identifier">source</span> =&gt; <span class="Constant">'puppet:///modules/collect_cpu_stats/collect-cpu-stats'</span>
+  <span class="Special">}</span>
+
+  <span class="Statement">file</span> <span class="Special">{</span> <span class="Constant">'/etc/init.d/collect-cpu-stats'</span>:
+    <span class="Identifier">ensure</span> =&gt; link,
+    <span class="Identifier">target</span> =&gt; <span class="Constant">'/lib/init/upstart-job'</span>
+  <span class="Special">}</span>
+<span class="Special">}</span>
+</pre>
+</body>
+</html>
